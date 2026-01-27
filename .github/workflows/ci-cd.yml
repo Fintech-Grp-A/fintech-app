@@ -198,12 +198,6 @@ jobs:
           echo "account-id=$ACCOUNT_ID" >> "$GITHUB_OUTPUT"
           echo "Resolved AWS Account ID: $ACCOUNT_ID"
 
-      - name: Notify Slack (🚀 Starting Deployment)
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data '{"text":"🚀 *Deployment started* in `${{ steps.resolve.outputs.env-name }}`."}' \
-            ${{ secrets.SLACK_WEBHOOK_URL }}
-
       - name: Configure kubectl via AWS CLI
         run: |
           CLUSTER_NAME=${{ steps.resolve.outputs.env-name }}-dominion-cluster
