@@ -125,7 +125,9 @@ jobs:
         run: |
           aws ecr get-login-password --region $AWS_REGION | \
           docker login --username AWS --password-stdin ${{ steps.resolve.outputs.account-id }}.dkr.ecr.$AWS_REGION.amazonaws.com
-
+      - name: Clean up Docker
+        run: |
+           docker system prune -a -f
       - name: Build and Push Docker Image
         run: |
           IMAGE_TAG=${{ steps.set-tag.outputs.image-tag }}
