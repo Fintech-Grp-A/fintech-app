@@ -264,17 +264,5 @@ jobs:
           echo "📦 Applying Kustomize overlay: $OVERLAY_DIR"
           kubectl apply -k "$OVERLAY_DIR"
 
-#      - name: Notify Slack (✅ Deploy Success)
-#        if: success()
-#        run: |
-#          curl -X POST -H 'Content-type: application/json' \
-#            --data '{"text":"✅ *Deployment Successful* to `${{ steps.resolve.outputs.env-name }}` by `${{ github.actor }}`."}' \
-#            ${{ secrets.SLACK_WEBHOOK_URL }}
-#
-#      - name: Notify Slack (🔥 Deploy Failed)
-#        if: failure()
-#        run: |
-#          curl -X POST -H 'Content-type: application/json' \
-#            --data '{"text":"🔥 *Deployment FAILED* to `${{ steps.resolve.outputs.env-name }}`."}' \
-#            ${{ secrets.SLACK_WEBHOOK_URL }}
+
 # new git 
