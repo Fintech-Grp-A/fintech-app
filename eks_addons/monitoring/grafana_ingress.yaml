@@ -17,7 +17,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: grafana.fusisoft.com
+  - host: grafana.pgabootcamps.com
     http:
       paths:
       - path: /

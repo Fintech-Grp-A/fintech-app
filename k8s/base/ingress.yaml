@@ -14,7 +14,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: app.fusisoft.com
+  - host: fintech.pgabootcamps.com
     http:
       paths:
       - path: /
